@@ -4,7 +4,7 @@
       <input type="text" placeholder="Task" v-model="newTask" />
       <button id="save-button" type="submit">Save</button>
     </form>
-    <TaskList :tasks="tasks" />
+    <TaskList :tasks="tasks" :deleteHandler="deleteHandler"/>
   </div>
 </template>
 
@@ -15,9 +15,15 @@ export default {
   name: "ToDoList",
   methods: {
     addTask() {
-      return this.tasks.push({name: this.newTask})
+      if (this.newTask.length > 1) {
+        return this.tasks.push({ name: this.newTask });
+      } else {
+        return;
+      }
     },
-    removeTask() {},
+    deleteHandler(index) {
+        return this.tasks.splice(index, 1)
+    },
     editTask() {},
   },
   components: {

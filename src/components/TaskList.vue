@@ -2,9 +2,9 @@
   <div>TaskList</div>
   <div>
     <ul>
-      <li v-for="task of tasks" :key="task.name">
+      <li v-for="(task, index) of tasks" :key="task.name">
         {{ task.name }}
-        <button @click="deleteHandler">Delete</button>
+        <button @click="() => deleteHandler(index)">Delete</button>
       </li>
     </ul>
   </div>
@@ -15,7 +15,8 @@ export default {
   name: "TaskList", 
   props: {
       tasks: Array,
-  }
+      deleteHandler: Function
+  },
 };
 </script>
 
