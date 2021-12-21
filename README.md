@@ -1,25 +1,8 @@
-# to-do-app
+A basic to do list application with 
+> dynamically rendering lists
+> conditional rendering
+> Create functionality
+> Delete functionality 
+> Read functionality 
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# VUE-to-do-list
+This is to improve my skills in view as a work towards tackling a larger full stack project.
