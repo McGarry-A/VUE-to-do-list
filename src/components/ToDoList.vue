@@ -1,22 +1,22 @@
 <template>
   <div id="ToDoList">
-    <div id="input-area">
-      <input type="text" placeholder="Task" />
-      <button id="save-button">Save</button>
-    </div>
-    <TaskList :tasks="tasks"/>
+    <form @submit.prevent="addTask()" id="input-area">
+      <input type="text" placeholder="Task" v-model="newTask" />
+      <button id="save-button" type="submit">Save</button>
+    </form>
+    <TaskList :tasks="tasks" />
   </div>
 </template>
 
 <script>
 import TaskList from "./TaskList";
 
-
-
 export default {
   name: "ToDoList",
   methods: {
-    addTask() {},
+    addTask() {
+      return this.tasks.push({name: this.newTask})
+    },
     removeTask() {},
     editTask() {},
   },
@@ -25,6 +25,7 @@ export default {
   },
   data: () => {
     return {
+      newTask: "",
       tasks: [
         {
           name: "learn Vue",
@@ -65,12 +66,12 @@ export default {
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 li {
-    display:flex;
-    justify-content: space-between;
-    width:100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 </style>
